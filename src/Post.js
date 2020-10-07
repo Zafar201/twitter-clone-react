@@ -7,22 +7,23 @@ import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 
-function Post({displayName,userName,verified,text,image,avatar}) {
+function Post({displayName,username,verified,text,image,avatar}) {
     return (
        <div className="post">
             <div className="post__avatar">
-               <Avatar src="https://avatars3.githubusercontent.com/u/68781759?s=60&v=4"/>
+               <Avatar src={avatar}/>
             </div>
             <div className="post__body">
                 <div className="post__header">
                     <div className="post__headerText">
-                       <h3>ZAFAR IRSHAD{""}<span className="post__headerSpecial"> <VerifiedUserIcon className="post__badge"/>@zafar201</span></h3>
+                       <h3>{displayName}{""}<span className="post__headerSpecial"> 
+                       {verified &&<VerifiedUserIcon className="post__badge"/>}@{username}</span></h3>
                     </div>
                     <div className="post__headerDescription">
-                        <p>I challenged u to build twitter clone react</p>
+                        <p>{text}</p>
                     </div>
                 </div>
-                <img src="https://media3.giphy.com/media/65ATdpi3clAdjomZ39/giphy.gif" alt="" />
+                <img src={image} alt="" />
                 <div className="post__footer">
                      <ChatBubbleOutlineIcon fontSize="small"/>
                      <RepeatIcon fontSize="small"/>
